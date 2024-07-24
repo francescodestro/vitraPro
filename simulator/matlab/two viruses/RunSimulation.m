@@ -35,13 +35,13 @@
 %                       virus 1 - [cell/mL] 
 %           I2:         Time profile of concentration of cells infected by 
 %                       virus 2 - [cell/mL] 
-%           B1:         Time profile of concentration of virus 1 genome 
+%           B1:         Time profile of concentration of virus 1  
 %                       bound to infected cells - [vg/mL] (total conc. in system)
-%           B2:         Time profile of concentration of virus 2 genome 
+%           B2:         Time profile of concentration of virus 2  
 %                       bound to infected cells - [vg/mL] (total conc. in system)
-%           B1_pc:      Time profile of concentration of virus 1 genome 
+%           B1_pc:      Time profile of concentration of virus 1  
 %                       bound to infected cells - [vg/mL] (total conc. in system)
-%           B2_pc:      Time profile of concentration of virus 2 genome 
+%           B2_pc:      Time profile of concentration of virus 2  
 %                       bound to infected cells - [vg/mL] (total conc. in system)
 %           N1:         Time profile of concentration of virus 1 genome in 
 %                       nucleus of infected cells - [vg/mL] (total conc. in system)
@@ -59,13 +59,13 @@
 %               infection ages of virus 1 and 2, as shown in sample_figures
 %
 %           Co:         Time profile of concentration of coinfected cells - [cell/mL]
-%           B1_Co:      Time profile of concentration of virus 1 genome 
+%           B1_Co:      Time profile of concentration of virus 1  
 %                       bound to coinfected cells - [vg/cell] (per cell basis)
-%           B2_Co:      Time profile of concentration of virus 2 genome 
+%           B2_Co:      Time profile of concentration of virus 2  
 %                       bound to coinfected cells - [vg/cell] (per cell basis)
-%           B1_Co_pc:   Time profile of concentration of virus 1 genome 
+%           B1_Co_pc:   Time profile of concentration of virus 1  
 %                       bound to coinfected cells - [vg/cell] (per cell basis)
-%           B2_Co_pc:   Time profile of concentration of virus 2 genome 
+%           B2_Co_pc:   Time profile of concentration of virus 2  
 %                       bound to coinfected cells - [vg/cell] (per cell basis)
 %           N1_Co:      Time profile of concentration of virus 1 genome in 
 %                       nucleus of coinfected cells - [vg/cell] (per cell basis)

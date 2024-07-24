@@ -26,9 +26,9 @@
 %               p.age_bins(j) at time tt(i)
 %           I1:         Time profile of concentration of cells infected by 
 %                       virus 1 - [cell/mL] 
-%           B1:         Time profile of concentration of virus 1 genome 
+%           B1:         Time profile of concentration of virus 1  
 %                       bound to infected cells - [vg/mL] (total conc. in system)
-%           B1_pc:      Time profile of concentration of virus 1 genome 
+%           B1_pc:      Time profile of concentration of virus 1  
 %                       bound to infected cells - [vg/mL] (total conc. in system)
 %           N1:         Time profile of concentration of virus 1 genome in 
 %                       nucleus of infected cells - [vg/mL] (total conc. in system)
