@@ -13,7 +13,7 @@
 #   Outputs:
 # 
 #       Scalar states:
-#           --> row i corresponds to values at time tt(i)
+#           --> row i corresponds to values at time tt[i]
 #           T:              Uninfected cell concentration time profile - [cell/mL]        
 #           V1:             Virion 1 concentration time profile - [PFU/mL]            
 #           V2:             Virion 2 concentration time profile - [PFU/mL]   
@@ -29,8 +29,8 @@
 #                           coinfected cells - [vg/cell] (per cell basis)
 #
 #       States distributed with respect to one infection age: 
-#           --> element (i,j) corresponds to cells at infection age equal to
-#               p.age_bins(j) at time tt(i)
+#           --> element [i,j] corresponds to cells at infection age equal to
+#               p.age_bins[j] at time tt[i]
 #           I1:         Time profile of concentration of cells infected by 
 #                       virus 1 - [cell/mL] 
 #           I2:         Time profile of concentration of cells infected by 
@@ -53,8 +53,11 @@
 #                       nucleus of infected cells - [vg/mL] (total conc. in system)
 # 
 #       States distributed with respect to two infection ages: 
-#           --> element (i,j) corresponds to cells at infection age equal to
-#               p.age_co(j) at time tt(i) 
+#           --> row i corresponds to the distribution at time tt[i] 
+#           --> vectors ind, ind_scB1Co, and ind_scB2Co can be used to
+#               map an element of the row i to a certain combination of
+#               infection ages of virus 1 and 2, as shown in sample_figures
+#
 #           Co:         Time profile of concentration of coinfected cells - [cell/mL]
 #           B1_Co:      Time profile of concentration of virus 1 genome 
 #                       bound to coinfected cells - [vg/cell] (per cell basis)
@@ -72,7 +75,20 @@
 #                       nucleus of coinfected cells - [vg/cell] (per cell basis)
 #           N2_Co_pc:   Time profile of concentration of virus 2 genome in 
 #                       nucleus of coinfected cells - [vg/cell] (per cell basis)
-########################################################################
+#
+#           --> Co[i, ind[i2+n_bins*(i1-1)]] corresponds to cells with
+#               infection age p.age_bins[i1] wrt virus 1 and p.age_bins[i2]
+#               wrt virus 2 at time tt[i]
+#           --> For B1_Co, B1_Co_pc, N1_Co, and N1_Co_pc, element 
+#               [i, ind_scB1Co[i2+n_bins*(i1-1)]] corresponds to cells with
+#               infection age p.age_bins[i1] wrt virus 1 and p.age_bins[i2] 
+#               wrt virus 2 at time tt[i]
+#           --> For B2_Co, B2_Co_pc, N2_Co, and N2_Co_pc, element 
+#               [i, ind_scB2Co[i2+n_bins*(i1-1)]] corresponds to cells with
+#               infection age p.age_bins[i1] wrt virus 1 and p.age_bins[i2] 
+#               wrt virus 2 at time tt[i]
+#
+#########################################################################
 
 import numpy as np
 from def_parameters import parameters
@@ -191,7 +207,7 @@ for i in range(1, len(tt)):
     xx_nucl[index, :] = x_nucl * scaling
     
 
-print("--- %s seconds ---" % (time.time() - start_time))
+print("--- #s seconds ---" # (time.time() - start_time))
 
 # Simulation outputs: detailed description in function header
 warnings.filterwarnings("ignore")

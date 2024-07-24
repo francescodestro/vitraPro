@@ -87,8 +87,8 @@ DD=ones(1,length(tt))*Din;
 r_bleed_vect=ones(1,length(tt))*r_bleed;
 Sin_vect=ones(1,length(tt))*Sin;
 
-numeric_scheme='RK45';
-% numeric_scheme='RK23';
+% numeric_scheme='RK45';
+numeric_scheme='RK23';
 
 generate_figures=1; % 1: generate sample figures; 0: do not generate sample figures
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -127,17 +127,8 @@ for i = 2:length(tt)
     r_bleed=r_bleed_vect(i);
     Sin=Sin_vect(i);
 
-    switch numeric_scheme
-
-        case 'RK23'
-            [t_out,x,x_bind,x_nucl,sum_h] = main_RK23([t t+Dt], x0, x0_bind, ...
-                x0_nucl, D, r_bleed, Cin, Sin, p, sum_h,scaling);
-
-        case 'RK45'
-            [t_out,x,x_bind,x_nucl,sum_h] = main_RK45([t t+Dt], x0, x0_bind, ...
-                x0_nucl, D, r_bleed, Cin, Sin, p, sum_h, scaling);
-
-    end
+    [t_out,x,x_bind,x_nucl,sum_h] = main([t t+Dt], x0, x0_bind, ...
+        x0_nucl, D, r_bleed, Cin, Sin, p, sum_h,scaling, numeric_scheme);
 
     % initialize following step
     x0=x(end,:);

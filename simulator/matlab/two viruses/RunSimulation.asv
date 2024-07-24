@@ -55,9 +55,8 @@
 %       States distributed with respect to two infection ages: 
 %           --> row i corresponds to the distribution at time tt(i) 
 %           --> vectors ind, ind_scB1Co, and ind_scB2Co can be used to
-%               map an element of the row i to a certain combination of
-%               infection ages of virus 1 and 2, as shown in sample_figures
-%
+%               map an element of the row i to a certain combina
+%           --> Co(ind(i2+n_bins*(i1-1)) corresponds to 
 %           Co:         Time profile of concentration of coinfected cells - [cell/mL]
 %           B1_Co:      Time profile of concentration of virus 1 genome 
 %                       bound to coinfected cells - [vg/cell] (per cell basis)
@@ -75,20 +74,7 @@
 %                       nucleus of coinfected cells - [vg/cell] (per cell basis)
 %           N2_Co_pc:   Time profile of concentration of virus 2 genome in 
 %                       nucleus of coinfected cells - [vg/cell] (per cell basis)
-%
-%           --> Co(i, ind(i2+n_bins*(i1-1))) corresponds to cells with
-%               infection age p.age_bins(i1) wrt virus 1 and p.age_bins(i2) 
-%               wrt virus 2 at time tt(i)
-%           --> For B1_Co, B1_Co_pc, N1_Co, and N1_Co_pc, element 
-%               (i, ind_scB1Co(i2+n_bins*(i1-1))) corresponds to cells with
-%               infection age p.age_bins(i1) wrt virus 1 and p.age_bins(i2) 
-%               wrt virus 2 at time tt(i)
-%           --> For B2_Co, B2_Co_pc, N2_Co, and N2_Co_pc, element 
-%               (i, ind_scB2Co(i2+n_bins*(i1-1))) corresponds to cells with
-%               infection age p.age_bins(i1) wrt virus 1 and p.age_bins(i2) 
-%               wrt virus 2 at time tt(i)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clear
 close all
