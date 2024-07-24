@@ -17,7 +17,7 @@ MATLAB and Python implementations are available. A (faster) model for systems wi
   - `CS_1_S1`: case studies 1 and S1 (simulate by running `Run_CS1.m` or `Run_CS_S1.m`)
   - `CS_2`: case study 2 (simulate by running `Run_CS2.m`)
   - `CS_3`: case study 3 (simulate by running `Run_CS3.m`)
-    - For benchmarking, this folder contains data taken from https://github.com/ModIAV/STV_DIP_Coinfection
+    - For benchmarking, this folder contains data taken from `github.com/ModIAV/STV_DIP_Coinfection`
 
 ## Simulation
 For starting a simulation, go to a simulator folder based on the desired language (MATLAB/Python) and system type (one/two viral species).
@@ -77,13 +77,13 @@ The MATLAB simulator for systems with one virus and the Python simulator contain
                       virus 1 - [cell/mL] 
           I2:         Time profile of concentration of cells infected by 
                       virus 2 - [cell/mL] 
-          B1:         Time profile of concentration of virus 1 genome 
+          B1:         Time profile of concentration of virus 1  
                       bound to infected cells - [vg/mL] (total conc. in system)
-          B2:         Time profile of concentration of virus 2 genome 
+          B2:         Time profile of concentration of virus 2  
                       bound to infected cells - [vg/mL] (total conc. in system)
-          B1_pc:      Time profile of concentration of virus 1 genome 
+          B1_pc:      Time profile of concentration of virus 1  
                       bound to infected cells - [vg/mL] (total conc. in system)
-          B2_pc:      Time profile of concentration of virus 2 genome 
+          B2_pc:      Time profile of concentration of virus 2  
                       bound to infected cells - [vg/mL] (total conc. in system)
           N1:         Time profile of concentration of virus 1 genome in 
                       nucleus of infected cells - [vg/mL] (total conc. in system)
@@ -96,13 +96,13 @@ The MATLAB simulator for systems with one virus and the Python simulator contain
 
       States distributed with respect to two infection ages: the output is a matrix. Each row of the matrix represents the state distribution at a time instant.
           Co:         Time profile of concentration of coinfected cells - [cell/mL]
-          B1_Co:      Time profile of concentration of virus 1 genome 
+          B1_Co:      Time profile of concentration of virus 1  
                       bound to coinfected cells - [vg/cell] (per cell basis)
-          B2_Co:      Time profile of concentration of virus 2 genome 
+          B2_Co:      Time profile of concentration of virus 2  
                       bound to coinfected cells - [vg/cell] (per cell basis)
-          B1_Co_pc:   Time profile of concentration of virus 1 genome 
+          B1_Co_pc:   Time profile of concentration of virus 1  
                       bound to coinfected cells - [vg/cell] (per cell basis)
-          B2_Co_pc:   Time profile of concentration of virus 2 genome 
+          B2_Co_pc:   Time profile of concentration of virus 2  
                       bound to coinfected cells - [vg/cell] (per cell basis)
           N1_Co:      Time profile of concentration of virus 1 genome in 
                       nucleus of coinfected cells - [vg/cell] (per cell basis)
