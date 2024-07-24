@@ -55,7 +55,7 @@
 #       States distributed with respect to two infection ages: 
 #           --> row i corresponds to the distribution at time tt[i] 
 #           --> vectors ind, ind_scB1Co, and ind_scB2Co can be used to
-#               map an element of the row i to a certain combination of
+#               map an element of row i to a certain combination of
 #               infection ages of virus 1 and 2, as shown in sample_figures
 #
 #           Co:         Time profile of concentration of coinfected cells - [cell/mL]
