@@ -1,10 +1,18 @@
 # vitraPro: simulation of viral transduction and propagation for biomanufacturing
 
-Simulation of viral transduction and propagation for up to two viral species in suspension cell cultures with model and numerics presented in:
+Simulation of viral transduction and propagation for up to two viral species in suspension cell cultures.
+Model and numerics presented in:
 
 Destro, F. and Braatz, R. D. (2024). Efficient simulation of viral transduction and propagation for biomanufacturing, biorXiv. DOI: 10.1101/2024.03.30.587435
 
 MATLAB and Python implementations are available. A (faster) model for systems with only one viral species is also implemented. 
+
+&nbsp;
+<p align="center">
+  <img src="https://github.com/francescodestro/vitraPro/blob/main/vitraPro.tif" width="770">
+</p>
+&nbsp;
+
 
 ## Repository structure
 - `simulator`: folder containing code for running simulations
