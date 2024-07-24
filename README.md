@@ -17,6 +17,7 @@ MATLAB and Python implementations are available. A (faster) model for systems wi
   - `CS_1_S1`: case studies 1 and S1 (simulate by running `Run_CS1.m` or `Run_CS_S1.m`)
   - `CS_2`: case study 2 (simulate by running `Run_CS2.m`)
   - `CS_3`: case study 3 (simulate by running `Run_CS3.m`)
+    - For benchmarking, this folder contains data taken from https://github.com/ModIAV/STV_DIP_Coinfection
 
 ## Simulation
 For starting a simulation, go to a simulator folder based on the desired language (MATLAB/Python) and system type (one/two viral species).
