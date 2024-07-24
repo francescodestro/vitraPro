@@ -117,7 +117,7 @@ The MATLAB simulator for systems with one virus and the Python simulator contain
 
 Additional information on the model input/output structure and on the model parameters to be specified in `def_parameters` is reported in the paper. The names of parameters and variables in the code reflect the symbols used in the papers.
 
-## Expand the simulator
+## Simulator expansion
 New parameters, variables, and settings can be added to the simulator by editing the simulator functions and scripts. 
 
 For instance, simulation of a continuous feed that contains more than one nutrient or suspended virions/infected cells can be set up by editing the relevant equations in `inf_model` and adding these additional inputs in `RunSimulation` and `main`.
