@@ -2,7 +2,7 @@
 %   
 %  vitraPro: Simulation of viral transduction and propagation in suspension cultures
 %
-%       v1.0 April 4, 2024. F. Destro
+%       v1.0 July 24, 2024. F. Destro
 %
 %       Reference:  
 %           Destro F. and R.D. Braatz (2024). Efficient simulation of viral
