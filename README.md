@@ -49,7 +49,7 @@ The MATLAB simulator for systems with one virus and the Python simulator contain
 - Simulation duration
 - Viable cell density at process onset
 - Nonviable cell density at process onset
-- Substrate concentration
+- Substrate concentration at process onset
 - Presence of DIPs (Y/N)
 - Viral inoculation conditions (two options):
   - Inoculation with virions: specify multiplicity of infection (inoculated plaque forming units per viable cell)
