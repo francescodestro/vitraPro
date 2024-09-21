@@ -6,7 +6,7 @@
 #
 #       Reference:  
 #           Destro F. and R.D. Braatz (2024). Efficient simulation of viral
-#           transduction and propagation for biomanufacturing. Submitted
+#           transduction and propagation for biomanufacturing. ACS Synthetic Biology. In press.
 #
 ########################################################################
 #
@@ -97,9 +97,6 @@ from main_functions import main_RK45
 from sample_figures import plot_sample_figures
 import warnings
 
-import time
-start_time = time.time()
-
 ########################################################################
 #   
 #   Simulation inputs setup
@@ -153,6 +150,8 @@ DD = np.ones(len(tt)) * Din
 r_bleed_vect = np.ones(len(tt)) * r_bleed
 Sin_vect = np.ones(len(tt)) * Sin
 
+numeric_scheme = 'RK23' # 'RK23' or 'RK45'
+
 generate_figures = 1  # 1: generate sample figures; 0: do not generate sample figures
 ########################################################################
 
@@ -189,25 +188,43 @@ bin_inoculation_2 = round(age_I0_2 / Dtau)
 x[p['startI2'] + bin_inoculation_2] = I0_2 / scaling
 x_nucl[p['startB2'] + bin_inoculation_2] = N_I0_2 / scaling
 
-for i in range(1, len(tt)):
-    D = DD[i]
-    Cin = CCin[i]
-    r_bleed = r_bleed_vect[i]
-    Sin = Sin_vect[i]
+if numeric_scheme == 'RK23':
 
-    t_out, x, x_bind, x_nucl, sum_h = main_RK45([t, t + Dt], x, x_bind, x_nucl, 
-                                           D, r_bleed, Cin, Sin, p, sum_h, scaling)
+    for i in range(1, len(tt)):
+        D = DD[i]
+        Cin = CCin[i]
+        r_bleed = r_bleed_vect[i]
+        Sin = Sin_vect[i]
     
-    t = t_out
-
-    # Save new results
-    index = i
-    xx[index, :] = x * scaling
-    xx_bind[index, :] = x_bind * scaling
-    xx_nucl[index, :] = x_nucl * scaling
+        t_out, x, x_bind, x_nucl, sum_h = main_RK23([t, t + Dt], x, x_bind, x_nucl, 
+                                               D, r_bleed, Cin, Sin, p, sum_h, scaling)
+        
+        t = t_out
     
-
-print("--- #s seconds ---" # (time.time() - start_time))
+        # Save new results
+        index = i
+        xx[index, :] = x * scaling
+        xx_bind[index, :] = x_bind * scaling
+        xx_nucl[index, :] = x_nucl * scaling
+        
+else:   
+    
+    for i in range(1, len(tt)):
+        D = DD[i]
+        Cin = CCin[i]
+        r_bleed = r_bleed_vect[i]
+        Sin = Sin_vect[i]
+    
+        t_out, x, x_bind, x_nucl, sum_h = main_RK45([t, t + Dt], x, x_bind, x_nucl, 
+                                               D, r_bleed, Cin, Sin, p, sum_h, scaling)
+        
+        t = t_out
+    
+        # Save new results
+        index = i
+        xx[index, :] = x * scaling
+        xx_bind[index, :] = x_bind * scaling
+        xx_nucl[index, :] = x_nucl * scaling
 
 # Simulation outputs: detailed description in function header
 warnings.filterwarnings("ignore")

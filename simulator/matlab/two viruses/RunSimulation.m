@@ -6,7 +6,8 @@
 %
 %       Reference:  
 %           Destro F. and R.D. Braatz (2024). Efficient simulation of viral
-%           transduction and propagation for biomanufacturing. Submitted
+%           transduction and propagation for biomanufacturing. ACS
+%           Synthetic Biology. In press.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
