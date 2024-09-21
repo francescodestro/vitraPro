@@ -7,14 +7,14 @@ cols=[{[189 148 196]/255} {[51 74 159]/255} {[163 202 235]/255} {[0 169 192]/255
 lines=[{'-'},{'-.'},{':'}];
 lws=[3 4 5]; 
 
-numeric_scheme='RK45';
+% numeric_scheme='RK45';
 numeric_scheme='RK23';
 
 %% Generate Figure S1
 for kk=1:length(MOIs)
     CS_S1_plots(kk,MOIs,cols,lines,lws,numeric_scheme);
 end
-save_plots();
+% save_plots();
 
 %% % Generate Figure 4
 % for kk=1

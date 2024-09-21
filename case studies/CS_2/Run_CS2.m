@@ -203,48 +203,48 @@ set(gca,'linewidth',2,'xtick',0:20:140,'xticklabel',0:20:140,'fontsize',22,'xlim
 % set(gca,'linewidth',2,'xtick',0:20:140,'xticklabel',0:20:140,'fontsize',22,'xlim',[0 100],'YScale','linear','ylim',[0 ylims_DNA(i)]) %'ylim',[0 2.5e8],,'xticklabel',[])
 
 % Save figures for manuscript
-figure(1)
-set(gca,'xtick',0:2:10)
-saveas(gcf,'I_CS2.png')
-
-figure(2)
-set(gca,'ylim',[0 8e7])
-set(gca,'xtick',0:2:10)
-saveas(gcf,'V_CS2.png')
-
-figure(4)
-set(gca,'xtick',0:2:10)
-saveas(gcf,'T_CS2.png')
-
-figure(5)
-set(gca,'xtick',0:2:10)
-saveas(gcf,'DNA_CS2ansf.png')
-
-figure(6)
-set(gca,'ylim',[0 3e4])
-set(gca,'ytick',[0 2e4])
-text(55, 3e4*.8,'1 d post inoculation','FontSize',20)
-saveas(gcf,'age_CS2_1.png')
-
-figure(7)
-set(gca,'ylim',[0 3e4])
-set(gca,'ytick',[0 2e4])
-text(55, 3e4*.8,'2 d post inoculation','FontSize',20)
-saveas(gcf,'age_CS2_2.png')
-
-figure(8)
-set(gcf,'Position',[ 729   458   565   122])
-set(gca,'ylim',[0 3e4])
-set(gca,'ytick',[0 2e4])
-text(55, 3e4*.8,'3 d post inoculation','FontSize',20)
-saveas(gcf,'age_CS2_3.png')
-
-figure(9)
-set(gcf,'Position',[  861   202   565   139])
-set(gca,'ylim',[0 4000])
-set(gca,'ytick',[0 2000],'yticklabel',[0 0.2])
-text(55, 4000*.8,'10 d post inoculation','FontSize',20)
-saveas(gcf,'age_CS2_4.png')
+% figure(1)
+% set(gca,'xtick',0:2:10)
+% saveas(gcf,'I_CS2.png')
+% 
+% figure(2)
+% set(gca,'ylim',[0 8e7])
+% set(gca,'xtick',0:2:10)
+% saveas(gcf,'V_CS2.png')
+% 
+% figure(4)
+% set(gca,'xtick',0:2:10)
+% saveas(gcf,'T_CS2.png')
+% 
+% figure(5)
+% set(gca,'xtick',0:2:10)
+% saveas(gcf,'DNA_CS2ansf.png')
+% 
+% figure(6)
+% set(gca,'ylim',[0 3e4])
+% set(gca,'ytick',[0 2e4])
+% text(55, 3e4*.8,'1 d post inoculation','FontSize',20)
+% saveas(gcf,'age_CS2_1.png')
+% 
+% figure(7)
+% set(gca,'ylim',[0 3e4])
+% set(gca,'ytick',[0 2e4])
+% text(55, 3e4*.8,'2 d post inoculation','FontSize',20)
+% saveas(gcf,'age_CS2_2.png')
+% 
+% figure(8)
+% set(gcf,'Position',[ 729   458   565   122])
+% set(gca,'ylim',[0 3e4])
+% set(gca,'ytick',[0 2e4])
+% text(55, 3e4*.8,'3 d post inoculation','FontSize',20)
+% saveas(gcf,'age_CS2_3.png')
+% 
+% figure(9)
+% set(gcf,'Position',[  861   202   565   139])
+% set(gca,'ylim',[0 4000])
+% set(gca,'ytick',[0 2000],'yticklabel',[0 0.2])
+% text(55, 4000*.8,'10 d post inoculation','FontSize',20)
+% saveas(gcf,'age_CS2_4.png')
 
 
 %% Figure 7: 3D plots
