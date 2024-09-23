@@ -25,7 +25,7 @@ MATLAB and Python implementations are available. A (faster) model for systems wi
   - `CS_1_S1`: case studies 1 and S1 (simulate by running `Run_CS1.m` or `Run_CS_S1.m`)
   - `CS_2`: case study 2 (simulate by running `Run_CS2.m`)
   - `CS_3`: case study 3 (simulate by running `Run_CS3.m`)
-    - For benchmarking, this folder contains data taken from `github.com/ModIAV/STV_DIP_Coinfection`
+    - The files `influenza_data.mat` and `sim_output_rudiger.mat` contained in this folder are taken from `github.com/ModIAV/STV_DIP_Coinfection`. 
 
 ## Simulation
 For starting a simulation, go to a simulator folder based on the desired language (MATLAB/Python) and system type (one/two viral species).
@@ -134,5 +134,5 @@ For instance, simulation of a continuous feed that contains more than one nutrie
 Destro, F. and Braatz, R. D. (2024). Efficient simulation of viral transduction and propagation for biomanufacturing, biorXiv. DOI: 10.1101/2024.03.30.587435_Mol
 
 ## License
-The code in this repository is provided under a CC BY-NC-ND 4.0 license, as detailed in the `LICENSE` file.
+The code in this repository is provided under a CC BY-NC-ND 4.0 license, as detailed in the `LICENSE` file. All rights related to the files `influenza_data.mat` and `sim_output_rudiger.mat` contained in the folder `Case studies/CS_3` and subfolders belong to the owners of the repository `github.com/ModIAV/STV_DIP_Coinfection`. 
 
