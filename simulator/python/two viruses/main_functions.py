@@ -780,10 +780,6 @@ def main_RK45(t_vect, x0, x0_bind, x0_nucl, D, r_bleed, Cin, Sin, p, sum_h,scali
      
     return  t,x,x_bind,x_nucl,sum_h
 
-       
-
-
-
 
 
 # @profile
@@ -846,8 +842,6 @@ def inf_model(t,x,x_bind,x_nucl,
     j = np.arange(n_bins)
     age = age_bins
 
-    # totI1 += I1
-    # totI2 += I2
 
     # Growth
     growthI1 = mu_I1 * I1 * growth_lim
@@ -861,18 +855,13 @@ def inf_model(t,x,x_bind,x_nucl,
     
     N1_pc[N1_pc<np.e]=1
     N2_pc[N2_pc<np.e]=1
-    # if N1_pc>=np.e:
     k_deathI1 = k_deathT * (0.5 + 0.5 * np.tanh((tau_death_I1 - age) / 0.3)) + \
                 k_death_I1 * np.log(N1_pc) * \
                 (0.5 + 0.5 * np.tanh((age - tau_death_I1) / 0.3))
-    # else:
-    #     k_deathI1 = k_deathT
-    # if N2_pc>=np.e:
+
     k_deathI2 = k_deathT * (0.5 + 0.5 * np.tanh((tau_death_I2 - age) / 0.3)) + \
                 k_death_I2 * np.log(N1_pc) * \
                     (0.5 + 0.5 * np.tanh((age - tau_death_I2) / 0.3))
-    # else:
-    #     k_deathI2 = k_deathT
 
     # I1 and I2 death
     deathI1 = k_deathI1 * I1
@@ -956,76 +945,6 @@ def inf_model(t,x,x_bind,x_nucl,
     bind2 += I2_uptake.sum()
         
         
-    # j = np.arange(n_bins_inf, n_bins)
-    # age = age_bins[j]
-
-    # # Growth
-    # growthI1 = mu_I1 * I1[j] * growth_lim
-    # growthI2 = mu_I2 * I2[j] * growth_lim
-    # dxdt[startI1 + j] += growthI1
-    # dxdt[startI2 + j] += growthI2
-
-    # # Death dependency on the number of DNA copies
-    # N1_pc=x_nucl[j] / (I1[j] + 1e-50)
-    # N2_pc=x_nucl[startB2 + j] / (I2[j] + 1e-50)
-    
-    # N1_pc[N1_pc<np.e]=1
-    # N2_pc[N2_pc<np.e]=1
-    # # if N1_pc>=np.e:
-    # k_deathI1 = k_deathT * (0.5 + 0.5 * np.tanh((tau_death_I1 - age) / 0.3)) + \
-    #             k_death_I1 * np.log(N1_pc) * \
-    #             (0.5 + 0.5 * np.tanh((age - tau_death_I1) / 0.3))
-    # # else:
-    # #     k_deathI1 = k_deathT
-    # # if N2_pc>=np.e:
-    # k_deathI2 = k_deathT * (0.5 + 0.5 * np.tanh((tau_death_I2 - age) / 0.3)) + \
-    #             k_death_I2 * np.log(N1_pc) * \
-    #                 (0.5 + 0.5 * np.tanh((age - tau_death_I2) / 0.3))
-    # # else:
-    # #     k_deathI2 = k_deathT
-
-    # # I1 and I2 death
-    # deathI1 = k_deathI1 * I1[j]
-    # deathI2 = k_deathI2 * I2[j]
-    # dxdt[startI1 + j] -= deathI1
-    # dxdt[startI2 + j] -= deathI2
-    # dxdt[endCo + 1] += deathI1.sum() + deathI2.sum()
-
-    # # V1, V2 bound to I1, I2: consumption for cell death and endocytosis
-    # Ein1 = k_int_I1 * x_bind[j]
-    # Ein2 = k_int_I2 * x_bind[startB2 + j]
-    # dxbind_dt[j] -= Ein1 + k_deathI1 * x_bind[j]
-    # dxbind_dt[startB2 + j] -= Ein2 + k_deathI2 * x_bind[startB2 + j]
-    # dxnucl_dt[j] += Ein1 * eta_I1 - k_deathI1 * x_nucl[j] - k_d_N1 * x_nucl[j]
-    # dxnucl_dt[startB2 + j] += Ein2 * eta_I2 - k_deathI2 * x_nucl[startB2 + j] - k_d_N2 * x_nucl[startB2 + j]
-
-    # # Nuclear reactions in I1 and I2: BV DNA replication
-    # dxnucl_dt[j] += k_repl_I1 * x_nucl[j] * f_repl_I1[j]
-    # dxnucl_dt[startB2 + j] += k_repl_I2 * x_nucl[startB2 + j] * f_repl_I2[j]
-
-    # # Release from I1
-    # rel_v1 += np.sum(k_rel_I1 * I1[j] * f_rel_I1[j])
-    # rel_v2 += np.sum(k_rel_I1 * I1[j] * f_rel_I1[j] * randV2_I1)
-
-    # # Release from I2
-    # rel_v1 += np.sum(k_rel_I2 * I2[j] * f_rel_I2[j] * randV1_I2)
-    # rel_v2 += np.sum(k_rel_I2 * I2[j] * f_rel_I2[j])
-
-    # # Bleeding
-    # dxdt[startI1 + j] -= b * I1[j]
-    # dxdt[startI2 + j] -= b * I2[j]
-    # dxbind_dt[startB1 + j] -= b * x_bind[startB1 + j]
-    # dxbind_dt[startB2 + j] -= b * x_bind[startB2 + j]
-    # dxnucl_dt[startB1 + j] -= b * x_nucl[startB1 + j]
-    # dxnucl_dt[startB2 + j] -= b * x_nucl[startB2 + j]
-
-    # # Viral genome to nonviable cells
-    # dxnucl_dt[-2] += np.sum( k_deathI1 * x_nucl[j])
-    # dxnucl_dt[-1] += np.sum(k_deathI2 * x_nucl[startB2 + j])
-        
-        
-    # for k in np.arange(len(Co)):
-        # totCo += Co[k]
     
     # Growth
     growthCo = mu_Co * Co * growth_lim
@@ -1039,12 +958,11 @@ def inf_model(t,x,x_bind,x_nucl,
     N_Co_pc=(f_death_Co1 * x_nucl[startB1Co:(startB1Co+len(Co))] + \
              f_death_Co2 * x_nucl[startB2Co:(startB2Co+len(Co))]) / (Co + 1e-30)
     N_Co_pc[N_Co_pc<np.e]=1
-    # if x_nucl[startB1Co:(startB1Co+len(Co))]+x_nucl[startB2Co:(startB2Co+len(Co))]>np.e:
+
     k_deathCo = k_deathT * (0.5 + 0.5 * np.tanh((tau_death_Co - age_co) / 0.3)) + \
             k_death_Co * np.log(N_Co_pc) * \
             (0.5 + 0.5 * np.tanh((age_co - tau_death_Co) / 0.3))
-    # else:
-        # k_deathCo = k_deathT
+
     
     deathCo = k_deathCo * Co
     dxdt[startCo:endCo+1] -= deathCo
